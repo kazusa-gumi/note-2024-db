@@ -13,3 +13,43 @@ RDBMS
 Phisycal Model Hardware
 Internal Model 
 Conceptional Model
+
+CONCAT_WS　意味
+SELECT Cust_ID, CONCAT_WS(' ', First_Name, Last_name) Cust_Name, Phone
+From M_Customer;
+you can combine First Name and Last Name 
+
+
+SQL ファイルをDLしたら、SQLQueryでexecuteする
+
+
+SELECT Last_name, SUBSTRING(Last_name, 1,3)
+From M_Customer;
+SUBSTRING
+指定した部分を切り取って、返してくれる関数なのです
+
+
+SELECT SYSDATETIME(), SYSDATETIMEOFFSET(), SYSUTCDATETIME(),CURRENT_TIMESTAMP,
+GETDATE(),
+GETUTCDATE();
+
+SELECT FORMAT(GETDATE(), 'dd/MM/yyyy') as Date;
+you can get today's date
+
+SELECT FORMAT(GETDATE(), 'dd/MM/yyyy') as Date, 
+FORMAT(getdate(),  'dd/MM/yyyy hh:mm:ss') as dateTime;
+you can see time
+
+SELECT FORMAT(GETDATE(), 'dd/MM/yyyy') as Date, 
+FORMAT(getdate(),  'dd/MM/yyyy hh:mm:ss') as dateTime,
+FORMAT(getdate(),  'dddd MMMM yyyy') as date,
+FORMAT(getdate(),  'MMM dd yyyy') as date,
+FORMAT(getdate(),  'HH:mm:ss') as twentyFourHours,
+FORMAT(getdate(),  'hh:mm:ss tt') as AM＿PM;
+
+
+１年後の日付を得られる
+SELECT GETDATE() as CurDate, DateADD(year, 1,getdate()) as oneYearLater
+
+SELECT DATEDIFF(day, '2019-01-11', '2019-03-11') as "Number of Date",
+DATEDIFF(month, '2019-01-11', '2019-03-11') as "Number of Month";
