@@ -53,3 +53,48 @@ SELECT GETDATE() as CurDate, DateADD(year, 1,getdate()) as oneYearLater
 
 SELECT DATEDIFF(day, '2019-01-11', '2019-03-11') as "Number of Date",
 DATEDIFF(month, '2019-01-11', '2019-03-11') as "Number of Month";
+
+
+小数点のやつ
+SELECT GST_$, ROUND(GST_$, 0) "Round to whole number", ROUND(GST_$, 1)"Round to 1 Decimal Point"
+FROM M_Rental;
+
+SELECT GST_$, ROUND(GST_$, 0) "Round to whole number", ROUND(GST_$, 1,1)"Round to 1 Decimal Point"
+FROM M_Rental;
+
+
+Select COUNT(*) "Sydney Vehicles" From M_Vehicle
+Where Branch_Code ='SYD';
+
+””のかしょはAttibuteのなまえを追加できる
+
+Select SUM(PETROL_$) "Total Petrol" 
+From M_Rental;
+
+
+AAVG, MAX, MIN, SUM
+
+Select Branch_Code, Count(*) "Total Vehicles"
+From M_Vehicle
+Group BY Branch_Code;
+
+Whereで条件式ね
+Select Rego_no, Cust_id,Rego_no, Insurance_$
+From M_Rental
+Where Insurance_$ = 0;
+
+Not = NULL
+Select Rego_no, Cust_id,Rego_no, Insurance_$
+From M_Rental
+Where Insurance_$ IS NULL;
+
+
+Select *
+From M_Type
+Where Not Make = 'Toyota';
+
+Select *
+From M_Type
+--Where Not Make = 'Toyota';
+--Where Make != 'Toyota';
+Where Make<> 'Toyota';
