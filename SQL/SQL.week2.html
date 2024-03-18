@@ -98,3 +98,53 @@ From M_Type
 --Where Not Make = 'Toyota';
 --Where Make != 'Toyota';
 Where Make<> 'Toyota';
+
+
+Select Rental_no, Cust_id, Rego_no, Start_Date, Returned
+From M_Rental
+Where Returned IS NOT NULL
+Order By Rego_no;
+
+Select *
+From M_Customer
+Order By  Suburb ASC, Cust_id DESC;
+
+
+CONCAT_WSで文字を文字を連結できる
+Select CONCAT_WS(' ', First_Name, Last_name) "Name", 
+CONCAT_WS(' ', Street_no, Street_name, Post_code) "Address"
+From M_Customer;
+
+William Askew	120 Smith St 3015
+Wayne Aspinall	2/12 Wilsons Lane 3053
+Shayne O Connor	1876A Victoria St 7000
+Wendy Bugner	45 Sturt St 3220
+Samantha Steele	187 Dendy St 3045
+Vanessa Davenport	6 Thompson St 3126
+Gustavo Kuerten	1872 Penllyne Crt 3177
+Keith Pennington	123 Lukin St 2640
+Wendy Saker	354 Cherry Lane 3185
+Lawrence Chang	5/73 Grange rd 3076
+Linda Evangellista	18 Dandenong Rd 2045
+Sam Geros	1120 Railway St 3015
+Mary Knott	73 Hallam Rd 3213
+Felix Mantilla	3/220 Wilson Crt 7000
+Wendy Walters	118 Dandenong Rd 3058
+Sam Newman	1120 Dendy St 3045
+Mary Smith	73 Sanders St 3213
+Sarah Winters	3/220 Smithers St 7000
+Gavin Mountford	120 Victoria St 3015
+Fumberger Hans	2/12 Smythes Rd 3053
+Zheng Liu	1876A Church St 7000
+Simon Liao	45 Grange Crt 3220
+Vincent Leung	187 Bay St 3045
+Ngoc Le Quang	645 Canterbury Rd 3126
+Felix Renzella	182 Glenhuntly Rd 3177
+Jane Rennick	123 Winter St 2640
+Julie Peluso	35 Nepean Hwy 3185
+Chris Perera	134 Glenhuntly rd 3076
+
+
+Select Vehicle_Type, ForMat(Effective_date, 'dd/MM/yyyy') "Effective date", daily_rate, GST
+From M_Fees
+Where Vehicle_type Like 'T%' OR Vehicle_type Like 'F%';
