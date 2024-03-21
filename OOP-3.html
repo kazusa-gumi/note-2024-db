@@ -28,6 +28,7 @@ Javaでいうstaticはstatic修飾子を指します。
 戻り値はないということ、nothing to do
 methodを実行した後になにか値が返されるわけではない。
 ただ処理が実行されるだけ、だからだからvoidをかえす
+We dont return anything from the Method
 
 public(provateとかアクセシビリティ)　static void main(String [] args) 
 public static void displayAddress()
@@ -39,7 +40,43 @@ must be one word
 camel cases is the best practice
 Java keywords cannot be used to method name
 
+引数　argument
+public static void caluculateGross(double hours)
+argument(parameter data type, parameter identifier(Parameter name))
+it does not mutter how many arguments there are 
+
+Const cannot modified　
+final double STD_Rate = 13.75;
+Variable 変数
+
+argument is variable
+" " means displaying String Value(Just taxt)
 
 
 
+need return Value
+public static double calculateross(double hours, double rate ←argument){
+    double gross;
+    gross = hours * rate;
+    return gross ←これが戻り値
+}
+このメソッドが　grossという戻り値を渡す
 
+Access modifies
+Accessibility(Access modifies) static return type(void/data type) methodName{
+
+}
+
+public static double calculatenetPay(double hours, double rate){
+    double gross;
+    double withholding;
+    double net; 
+
+    ↑パラメーターは３つ、それぞれfinalももついていないのでvariable 
+    もしfinal ついてればconstになる
+
+    gross = calculateGross(hours, rate); ←use argument, add argument to calculateGross Method
+    withholding = calculateWithHolding(gross);
+    net = gross - withholding;
+    return net ←return value
+}
