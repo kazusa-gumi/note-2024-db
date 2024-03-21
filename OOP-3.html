@@ -80,3 +80,59 @@ public static double calculatenetPay(double hours, double rate){
     net = gross - withholding;
     return net ←return value
 }
+
+
+primitive type
+double, boolean, etc...
+
+カプセル化（enableCapuselation)
+private int empNum; 
+public  void setEmpNum(int emp){
+    empNum = emp;
+}
+
+Setter and getterってやつらしい
+
+
+/*
+ * @autor Kazusa
+ * @version 1.0
+ * @Date 21.03/2024
+ */
+public class NumberDemo {
+
+	public static void main(String[] args) {
+		// 2 integer typed variables are declare
+		int number1 = 10;
+		int number2 = 20;		
+		displayTwiceTheNumber(number1);
+		displayTwiceTheNumber(number2);
+		displayNumberPlusFive(number1);
+		displayNumberPlusFive(number2);
+		 dislpayNumberSquared(number1);
+		 dislpayNumberSquared(number2);
+	}
+	
+	public static void displayTwiceTheNumber (int numberA) {
+		final int FACTOR =2;
+		System.out.println("The twice the number of " + numberA + " is "+(numberA *FACTOR) + ".");
+	}
+	
+	public static void displayNumberPlusFive (int numberA) {
+		final int ADDFIVE = 5;
+		System.out.println("The added 5 the number of " + numberA + " is "+(numberA + ADDFIVE) + ".");
+	}
+	public static void dislpayNumberSquared(int numberA) {
+		final int calculateSquare = numberA * numberA ;
+		System.out.println("The square number of " + numberA + " is "+ calculateSquare + ".");
+	}
+}
+
+
+
+className objectName = new Scanner(system.in);
+newはkeywordから入ってきたものを入れ込む感じ
+classnameとnew のあとのなまえはいっしょでないといけない
+
+Scanner input = new Scanner(system.int)みたいなかんじ
+
