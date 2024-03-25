@@ -71,4 +71,52 @@ student enrollment  1: many
 enrollment class many:1
 class courses many:1
 
+The relational database facilities control of data redundancies trhough use of forign keys
 
+
+SELECT Branch_Code, Branch_name, Manager, eMail_address
+FROM M_Branch
+WHERE Branch_Code ='ADE';
+
+
+
+
+-- question 1--
+SELECT Branch_Code, Branch_name, Manager, eMail_address
+FROM M_Branch
+WHERE Branch_Code ='ADE';
+
+-- question 2--
+SELECT Rego_no, Purchased, Location
+FROM M_Vehicle
+WHERE Transmission ='Manual' AND Color ='white';
+
+-- question 3--
+SELECT First_name, Last_name, Suburb
+FROM M_Customer
+WHERE Suburb LIKE '%B%';
+
+-- question 4--
+SELECT Vehicle_type, Effective_date, Daily_rate, (Daily_rate + Daily_rate * 0.1) as "New_Rate"
+FROM M_Fees;
+
+-- question 5--
+SELECT First_name, Last_name, Cust_id
+FROM M_Customer
+WHERE Post_code > 3050;
+
+-- question 6-1--
+SELECT *
+FROM M_Type
+WHERE Make = 'Ford' OR Make ='Holden';
+
+-- question 6-2--
+SELECT *
+FROM M_Type
+WHERE Make IN ('Ford','Holden');
+
+-- question 7--
+SELECT Vehicle_type, Make, Model, Engine_cap
+FROM M_Type
+WHERE Engine_cap BETWEEN 2600 AND 3800
+ORDER BY MAKE ASC, Model ASC;
